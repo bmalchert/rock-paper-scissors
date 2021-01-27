@@ -26,7 +26,45 @@ function computerPlay() {
     }
 }
 
-console.log(computerPlay());
+// Play a round of rock paper scissors with `playerSelection` and
+// `computerSelection` set to one of rock, paper, or scissors.
+// The inputs are case insensitive.
+function playRound(playerSelection, computerSelection) {
+    playerSelection = playerSelection.toLowerCase();
+    computerSelection = computerSelection.toLowerCase();
+
+    if (playerSelection == "rock") {
+        switch (computerSelection) {
+            case "rock":
+                return "Tie!";
+            case "paper":
+                return "You lose! Paper beats rock!";
+            case "scissors":
+                return "You win! Rock beats scissors!";
+        }
+    }
+    else if (playerSelection == "paper") {
+        switch (computerSelection) {
+            case "rock":
+                return "You win! Paper beats rock!";
+            case "paper":
+                return "Tie!";
+            case "scissors":
+                return "You lose! Scissors beats paper!";
+        }
+    }
+    else if (playerSelection == "scissors") {
+        switch (computerSelection) {
+            case "rock":
+                return "You lose! Rock beats scissors!";
+            case "paper":
+                return "You win! Scissors beats paper!";
+            case "scissors":
+                return "Tie!";
+        }
+    }
+
+}
 </script>
 </body>
 
