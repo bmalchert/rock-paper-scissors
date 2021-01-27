@@ -65,6 +65,96 @@ function playRound(playerSelection, computerSelection) {
     }
 
 }
+
+// Play a 5 round game of rock paper scissors.
+function game() {
+    let score_player = 0;
+    let score_computer = 0;
+    let playerSelection = 'none';
+    let computerSelection = 'none';
+    let result = 'none';
+
+    playerSelection = prompt("Pick rock, paper, or scissors.");
+    computerSelection = computerPlay();
+    result = playRound(playerSelection, computerSelection);
+    if (result == "player") {
+        score_player++;
+        console.log("You scored!")
+    }
+    else if (result == "computer") {
+        score_computer++;
+        console.log("Computer scored!");
+    }
+    else {
+        console.log("Tied!");
+    }
+
+    playerSelection = prompt("Pick rock, paper, or scissors.");
+    computerSelection = computerPlay();
+    result = playRound(playerSelection, computerSelection);
+    if (result == "player") {
+        score_player++;
+        console.log("You scored!")
+    }
+    else if (result == "computer") {
+        score_computer++;
+        console.log("Computer scored!");
+    }
+    else {
+        console.log("Tied!");
+    }
+
+    playerSelection = prompt("Pick rock, paper, or scissors.");
+    computerSelection = computerPlay();
+    result = playRound(playerSelection, computerSelection);
+    if (result == "player") {
+        score_player++;
+        console.log("You scored!")
+    }
+    else if (result == "computer") {
+        score_computer++;
+        console.log("Computer scored!");
+    }
+    else {
+        console.log("Tied!");
+    }
+
+    playerSelection = prompt("Pick rock, paper, or scissors.");
+    computerSelection = computerPlay();
+    result = playRound(playerSelection, computerSelection);
+    if (result == "player") {
+        score_player++;
+        console.log("You scored!")
+    }
+    else if (result == "computer") {
+        score_computer++;
+        console.log("Computer scored!");
+    }
+    else {
+        console.log("Tied!");
+    }
+
+    playerSelection = prompt("Pick rock, paper, or scissors.");
+    computerSelection = computerPlay();
+    result = playRound(playerSelection, computerSelection);
+    if (result == "player") {
+        score_player++;
+        console.log("You scored!")
+    }
+    else if (result == "computer") {
+        score_computer++;
+        console.log("Computer scored!");
+    }
+    else {
+        console.log("Tied!");
+    }
+
+    if (score_player > score_computer) console.log("You Win!");
+    else if (score_computer > score_player) console.log("The computer wins!");
+    else console.log("It was a tie!");
+}
+
+game();
 </script>
 </body>
 
