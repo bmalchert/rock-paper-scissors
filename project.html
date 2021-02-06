@@ -12,9 +12,18 @@
         <button id="scissors">SCISSORS</button>
     </div>
 
-
+    <div class="results">
+        Player:   <span id="playerpoints">0</span><br>
+        Computer: <span id="computerpoints">0</span>
+    </div>
 
 <script>
+    score_player = 0;
+    score_computer = 0;
+    
+    // node objects for the score text
+    const playerPoints = document.querySelector('#playerpoints');
+    const computerPoints = document.querySelector('#computerpoints');
 
     // Return one of `Rock`, `Paper`, or `Scissors` randomly
     function computerPlay() {
@@ -46,76 +55,50 @@
         else return;
 
         let computerSelection = computerPlay();
-        console.log(computerSelection);
 
         if (playerSelection == "rock") {
             switch (computerSelection) {
                 case "rock":
-                    console.log('tie');
-                    return "tie";
+                    return; // tie
                 case "paper":
-                    console.log('computer');
-                    return "computer";
+                    score_computer++;
+                    computerPoints.textContent = score_computer;
+                    return;
                 case "scissors":
-                    console.log('player');
-                    return "player";
+                    score_player++;
+                    playerPoints.textContent = score_player;
+                    return;
             }
         }
         else if (playerSelection == "paper") {
             switch (computerSelection) {
                 case "rock":
-                    console.log("player");
-                    return "player";
+                    score_player++;
+                    playerPoints.textContent = score_player;
+                    return;
                 case "paper":
-                    console.log("tie");
-                    return "tie";
+                    return; // tie
                 case "scissors":
-                    console.log("computer");
-                    return "computer";
+                    score_computer++;
+                    computerPoints.textContent = score_computer;
+                    return;
             }
         }
         else if (playerSelection == "scissors") {
             switch (computerSelection) {
                 case "rock":
-                    console.log("computer");
-                    return "computer";
+                    score_computer++;
+                    computerPoints.textContent = score_computer;
+                    return;
                 case "paper":
-                    console.log("player");
-                    return "player";
+                    score_player++;
+                    playerPoints.textContent = score_player;
+                    return;
                 case "scissors":
-                    console.log("tie");
-                    return "tie";
+                    return; // tie
             }
         }
 
-    }
-
-    // Play a game of rock, paper, scissors until somebody gets 5 points
-    function game() {
-        let score_player = 0;
-        let score_computer = 0;
-        let playerSelection = 'none';
-        let computerSelection = 'none';
-        let result = 'none';
-
-        playerSelection = prompt("Pick rock, paper, or scissors.");
-        computerSelection = computerPlay();
-        result = playRound(playerSelection, computerSelection);
-        if (result == "player") {
-            score_player++;
-            console.log("You scored!")
-        }
-        else if (result == "computer") {
-            score_computer++;
-            console.log("Computer scored!");
-        }
-        else {
-            console.log("Tied!");
-        }
-
-        if (score_player > score_computer) console.log("You Win!");
-        else if (score_computer > score_player) console.log("The computer wins!");
-        else console.log("It was a tie!");
     }
 
     const buttons = document.querySelectorAll('button');
