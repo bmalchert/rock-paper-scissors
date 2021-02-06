@@ -74,79 +74,21 @@ function game() {
     let computerSelection = 'none';
     let result = 'none';
 
-    playerSelection = prompt("Pick rock, paper, or scissors.");
-    computerSelection = computerPlay();
-    result = playRound(playerSelection, computerSelection);
-    if (result == "player") {
-        score_player++;
-        console.log("You scored!")
-    }
-    else if (result == "computer") {
-        score_computer++;
-        console.log("Computer scored!");
-    }
-    else {
-        console.log("Tied!");
-    }
-
-    playerSelection = prompt("Pick rock, paper, or scissors.");
-    computerSelection = computerPlay();
-    result = playRound(playerSelection, computerSelection);
-    if (result == "player") {
-        score_player++;
-        console.log("You scored!")
-    }
-    else if (result == "computer") {
-        score_computer++;
-        console.log("Computer scored!");
-    }
-    else {
-        console.log("Tied!");
-    }
-
-    playerSelection = prompt("Pick rock, paper, or scissors.");
-    computerSelection = computerPlay();
-    result = playRound(playerSelection, computerSelection);
-    if (result == "player") {
-        score_player++;
-        console.log("You scored!")
-    }
-    else if (result == "computer") {
-        score_computer++;
-        console.log("Computer scored!");
-    }
-    else {
-        console.log("Tied!");
-    }
-
-    playerSelection = prompt("Pick rock, paper, or scissors.");
-    computerSelection = computerPlay();
-    result = playRound(playerSelection, computerSelection);
-    if (result == "player") {
-        score_player++;
-        console.log("You scored!")
-    }
-    else if (result == "computer") {
-        score_computer++;
-        console.log("Computer scored!");
-    }
-    else {
-        console.log("Tied!");
-    }
-
-    playerSelection = prompt("Pick rock, paper, or scissors.");
-    computerSelection = computerPlay();
-    result = playRound(playerSelection, computerSelection);
-    if (result == "player") {
-        score_player++;
-        console.log("You scored!")
-    }
-    else if (result == "computer") {
-        score_computer++;
-        console.log("Computer scored!");
-    }
-    else {
-        console.log("Tied!");
+    for (let i = 0; i < 5; i++) {
+        playerSelection = prompt("Pick rock, paper, or scissors.");
+        computerSelection = computerPlay();
+        result = playRound(playerSelection, computerSelection);
+        if (result == "player") {
+            score_player++;
+            console.log("You scored!")
+        }
+        else if (result == "computer") {
+            score_computer++;
+            console.log("Computer scored!");
+        }
+        else {
+            console.log("Tied!");
+        }
     }
 
     if (score_player > score_computer) console.log("You Win!");
