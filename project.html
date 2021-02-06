@@ -59,15 +59,15 @@
         if (playerSelection == "rock") {
             switch (computerSelection) {
                 case "rock":
-                    return; // tie
+                    break; // tie
                 case "paper":
                     score_computer++;
                     computerPoints.textContent = score_computer;
-                    return;
+                    break;
                 case "scissors":
                     score_player++;
                     playerPoints.textContent = score_player;
-                    return;
+                    break;
             }
         }
         else if (playerSelection == "paper") {
@@ -75,13 +75,13 @@
                 case "rock":
                     score_player++;
                     playerPoints.textContent = score_player;
-                    return;
+                    break;
                 case "paper":
-                    return; // tie
+                    break; // tie
                 case "scissors":
                     score_computer++;
                     computerPoints.textContent = score_computer;
-                    return;
+                    break;
             }
         }
         else if (playerSelection == "scissors") {
@@ -89,14 +89,29 @@
                 case "rock":
                     score_computer++;
                     computerPoints.textContent = score_computer;
-                    return;
+                    break;
                 case "paper":
                     score_player++;
                     playerPoints.textContent = score_player;
-                    return;
+                    break;
                 case "scissors":
-                    return; // tie
+                break; // tie
             }
+        }
+
+        if (score_player === 5) {
+            alert('Player wins!');
+            score_computer = 0;
+            score_player = 0;
+            playerPoints.textContent = score_player;
+            computerPoints.textContent = score_computer;
+        }
+        else if (score_computer === 5) {
+            alert('Computer wins');
+            score_computer = 0;
+            score_player = 0;
+            playerPoints.textContent = score_player;
+            computerPoints.textContent = score_computer;
         }
 
     }
